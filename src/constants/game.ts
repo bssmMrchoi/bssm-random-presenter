@@ -14,7 +14,7 @@ export const JUDGE_DURATION = 1200;
 export const RESULT_HOLD_DURATION = 1500;
 export const REVEAL_DELAY = 800;
 
-export const THEME_SONG_SRC = "/tema_song.mp3";
+export const THEME_SONG_SRC = `${import.meta.env.BASE_URL}tema_song.mp3`;
 export const THEME_SONG_VOLUME = 0.7;
 
 /** 투구 횟수(볼+스트라이크 누적)에 따른 스트라이크 확률 */
