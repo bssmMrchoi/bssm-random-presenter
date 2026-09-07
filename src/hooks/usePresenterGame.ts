@@ -12,6 +12,7 @@ import {
   getStrikeChance,
 } from "@/constants/game";
 import { pickWeightedName } from "@/lib/weightedPick";
+import { playRevealChime } from "@/lib/chime";
 
 export type Phase =
   | "idle"
@@ -163,7 +164,7 @@ export function usePresenterGame() {
         setStrikeCount((c) => {
           const n = c + 1;
           if (n >= strikeTarget) {
-            setTimeout(() => { stopAudio(); setWinner(chosen); setPhase("reveal"); }, REVEAL_DELAY);
+            setTimeout(() => { stopAudio(); playRevealChime(); setWinner(chosen); setPhase("reveal"); }, REVEAL_DELAY);
           } else {
             setTimeout(() => setPhase("strike-wait"), REVEAL_DELAY);
           }
